@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultats ROI - LumiAira</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Calculateur ROI Support Client - LumiAira">
     <meta property="og:description" content="Découvrez combien vous pourriez économiser en automatisant votre support client e-commerce.">
@@ -36,11 +39,25 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(to left, var(--bg-start) 0%, var(--bg-end) 100%);
+            background: linear-gradient(to right, var(--bg-start) 0%, var(--bg-end) 100%);
             min-height: 100vh;
             color: var(--text-primary);
             position: relative;
             overflow-x: hidden;
+        }
+
+        /* Subtle grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            z-index: 0;
         }
 
         .container {
@@ -231,6 +248,42 @@
             font-weight: 600;
         }
 
+        .benefits-list.pain-points li::before {
+            content: '–';
+            color: #ff6b6b;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 25px 0 15px;
+            text-align: left;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solution-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 580px;
+        }
+
+        .solution-box h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .solution-list li::before {
+            content: '✓';
+            color: #4ade80;
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -357,8 +410,7 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <!-- LOGO_URL_ICI : Remplacez l'URL ci-dessous par l'URL de votre logo PNG -->
-            <img src="LOGO_URL_ICI" alt="LumiAira" class="logo-img">
+            <img src="logo.png" alt="LumiAira" class="logo-img">
         </header>
 
         <!-- Error Container (hidden by default) -->
@@ -372,7 +424,7 @@
         <div id="results-container" class="hidden">
             <!-- Hero Section -->
             <section class="hero">
-                <h1><span id="prenom-display"></span>, voici ce que te coûte ton support client manuel 💸</h1>
+                <h1><span id="prenom-display"></span>, voici ce que vous coûte votre support client manuel 💸</h1>
                 <p class="subtitle">Analyse personnalisée pour <span id="marque-display" class="brand-name"></span></p>
             </section>
 
@@ -423,19 +475,34 @@
                     <div class="secondary-stat" style="margin-top: 15px;">
                         <span id="eco-annuelle" class="count-up">0</span>€ /an
                     </div>
-                    <p class="card-description">Ce que tu pourrais économiser en automatisant</p>
+                    <p class="card-description">Ce que vous pourriez économiser en automatisant</p>
                 </div>
             </section>
 
             <!-- CTA Section -->
             <section class="cta-section">
-                <h2>✨ En automatisant <span id="pourcentage-display">70</span>% de ton support niveau 1, tu pourrais :</h2>
-                <ul class="benefits-list">
-                    <li>Récupérer <span class="highlight" id="heures-cta">0</span>h/mois pour te concentrer sur l'acquisition</li>
-                    <li>Économiser <span class="highlight" id="eco-cta">0</span>€/an</li>
-                    <li>Répondre à tes clients 24/7 sans embaucher</li>
-                    <li>Garder l'authenticité de ta marque (l'IA s'adapte à ton ton)</li>
+                <h2>⚠️ Chaque question non traitée avant l'achat devient :</h2>
+                <ul class="benefits-list pain-points">
+                    <li>Une vente perdue</li>
+                    <li>Un ticket support inutile après-vente</li>
                 </ul>
+
+                <h3 class="result-title">Résultat :</h3>
+                <ul class="benefits-list pain-points">
+                    <li>Votre CAC augmente</li>
+                    <li>Votre taux de conversion baisse</li>
+                    <li>Votre équipe passe ses journées sur Zendesk/Gorgias/Intercom à répondre aux mêmes questions au lieu de scaler</li>
+                </ul>
+
+                <div class="solution-box">
+                    <h3>✨ En automatisant <span id="pourcentage-display">70</span>% de votre support niveau 1 :</h3>
+                    <ul class="benefits-list solution-list">
+                        <li>Vous récupérez <span class="highlight" id="heures-cta">0</span>h/mois pour vous concentrer sur l'acquisition</li>
+                        <li>Vous économisez <span class="highlight" id="eco-cta">0</span>€/an</li>
+                        <li>Vous répondez à vos clients 24/7 sans embaucher</li>
+                    </ul>
+                </div>
+
                 <a href="https://calendly.com/archambaultsimon007/30min" class="cta-button" target="_blank">
                     Réserver mon audit gratuit (30 min)
                     <span class="arrow">→</span>
