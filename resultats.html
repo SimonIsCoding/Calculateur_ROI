@@ -248,42 +248,6 @@
             font-weight: 600;
         }
 
-        .benefits-list.pain-points li::before {
-            content: '–';
-            color: #ff6b6b;
-        }
-
-        .result-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin: 25px 0 15px;
-            text-align: left;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .solution-box {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 30px auto;
-            max-width: 580px;
-        }
-
-        .solution-box h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
-
-        .solution-list li::before {
-            content: '✓';
-            color: #4ade80;
-        }
-
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -481,28 +445,13 @@
 
             <!-- CTA Section -->
             <section class="cta-section">
-                <h2>⚠️ Chaque question non traitée avant l'achat devient :</h2>
-                <ul class="benefits-list pain-points">
-                    <li>Une vente perdue</li>
-                    <li>Un ticket support inutile après-vente</li>
+                <h2>✨ En automatisant <span id="pourcentage-display">70</span>% de votre support niveau 1, vous pourriez :</h2>
+                <ul class="benefits-list">
+                    <li>Récupérer <span class="highlight" id="heures-cta">0</span>h/mois pour vous concentrer sur l'acquisition</li>
+                    <li>Économiser <span class="highlight" id="eco-cta">0</span>€/an</li>
+                    <li>Répondre à vos clients 24/7 sans embaucher</li>
+                    <li>Garder l'authenticité de votre marque (l'IA s'adapte à votre ton)</li>
                 </ul>
-
-                <h3 class="result-title">Résultat :</h3>
-                <ul class="benefits-list pain-points">
-                    <li>Votre CAC augmente</li>
-                    <li>Votre taux de conversion baisse</li>
-                    <li>Votre équipe passe ses journées sur Zendesk/Gorgias/Intercom à répondre aux mêmes questions au lieu de scaler</li>
-                </ul>
-
-                <div class="solution-box">
-                    <h3>✨ En automatisant <span id="pourcentage-display">70</span>% de votre support niveau 1 :</h3>
-                    <ul class="benefits-list solution-list">
-                        <li>Vous récupérez <span class="highlight" id="heures-cta">0</span>h/mois pour vous concentrer sur l'acquisition</li>
-                        <li>Vous économisez <span class="highlight" id="eco-cta">0</span>€/an</li>
-                        <li>Vous répondez à vos clients 24/7 sans embaucher</li>
-                    </ul>
-                </div>
-
                 <a href="https://calendly.com/archambaultsimon007/30min" class="cta-button" target="_blank">
                     Réserver mon audit gratuit (30 min)
                     <span class="arrow">→</span>
