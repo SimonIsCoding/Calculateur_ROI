@@ -26,35 +26,21 @@
         }
 
         :root {
-            --bg-start: #141433;
-            --bg-end: #302fa0;
+            --bg-start: #161630;
+            --bg-end: #36338a;
             --text-primary: #FFFFFF;
             --text-secondary: #B8B8D1;
-            --accent: #00D4AA;
+            --accent: #FFFFFF;
             --card-bg: rgba(255, 255, 255, 0.1);
         }
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            background: linear-gradient(to left, var(--bg-start) 0%, var(--bg-end) 100%);
             min-height: 100vh;
             color: var(--text-primary);
             position: relative;
             overflow-x: hidden;
-        }
-
-        /* Grain texture overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.4;
-            pointer-events: none;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            z-index: 0;
         }
 
         .container {
@@ -71,14 +57,11 @@
             padding: 30px 0 20px;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo-img {
+            height: 40px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
         }
 
         /* Hero Section */
@@ -187,12 +170,12 @@
         }
 
         .equivalent {
-            background: rgba(0, 212, 170, 0.15);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
             padding: 12px 15px;
             margin: 15px 0;
             font-size: 0.95rem;
-            color: var(--accent);
+            color: var(--text-primary);
             font-weight: 500;
         }
 
@@ -252,21 +235,21 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--accent);
-            color: var(--bg-start);
+            background: #FFFFFF;
+            color: #000000;
             text-decoration: none;
             padding: 18px 35px;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 212, 170, 0.3);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 50px rgba(0, 212, 170, 0.4);
-            background: #00e6b8;
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.3);
+            background: #f0f0f0;
         }
 
         .cta-button .arrow {
@@ -288,7 +271,7 @@
             animation-delay: 1s;
         }
 
-        footer .logo-small {
+        footer .brand-name-footer {
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -374,7 +357,8 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <div class="logo">LumiAira</div>
+            <!-- LOGO_URL_ICI : Remplacez l'URL ci-dessous par l'URL de votre logo PNG -->
+            <img src="LOGO_URL_ICI" alt="LumiAira" class="logo-img">
         </header>
 
         <!-- Error Container (hidden by default) -->
@@ -461,7 +445,7 @@
 
         <!-- Footer -->
         <footer>
-            <span class="logo-small">LumiAira</span> - Automatisation intelligente du support client
+            <span class="brand-name-footer">LumiAira</span> - Automatisation intelligente du support client
         </footer>
     </div>
 
